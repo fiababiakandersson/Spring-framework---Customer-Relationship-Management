@@ -4,7 +4,11 @@
 <beans>
 	<bean id="customerService" class="se.yrgo.services.customers.CustomerManagementMockImpl"/>
 
-    <bean id="callHandlingService" class="se.yrgo.services.calls.CallHandlingService" >
+    <bean id="diaryService" class="se.yrgo.services.diary.DiaryManagementServiceMockImpl"/>
+
+
+    <bean id="callHandlingService" class="se.yrgo.services.calls.CallHandlingServiceImpl" >
         <constructor-arg ref="customerService" />
+        <constructor-arg ref="diaryService" />
     </bean>
 </beans>
