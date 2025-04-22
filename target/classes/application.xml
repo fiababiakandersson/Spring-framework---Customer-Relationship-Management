@@ -3,4 +3,8 @@
 
 <beans>
 	<bean id="customerService" class="se.yrgo.services.customers.CustomerManagementMockImpl"/>
+
+    <bean id="callHandlingService" class="se.yrgo.services.calls.CallHandlingService" >
+        <constructor-arg ref="customerService" />
+    </bean>
 </beans>

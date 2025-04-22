@@ -7,8 +7,6 @@ import org.springframework.context.support.*;
 import se.yrgo.domain.*;
 import se.yrgo.services.customers.*;
 
-// TODO (have not done, skipped): Del 2 - Utöka konfigurationen av Wiring
-
 public class SimpleClient {
 
     public static void main(String[] args) {
