@@ -21,13 +21,17 @@ public class CustomerManagementMockImpl implements CustomerManagementService {
 
 	@Override
 	public void updateCustomer(Customer changedCustomer) {
-		Customer c = customerMap.get(changedCustomer.getCustomerId());
-		c.setCustomerId(changedCustomer.getCustomerId());
-		c.setCompanyName(changedCustomer.getCompanyName());
-		c.setNotes(changedCustomer.getNotes());
-		c.setEmail(changedCustomer.getEmail());
-		c.setTelephone(changedCustomer.getTelephone());
-		c.setCalls(changedCustomer.getCalls());
+		Customer customer = customerMap.get(changedCustomer.getCustomerId());
+		if (customer != null) {
+			customer.setEmail(changedCustomer.getEmail());
+			customer.setCompanyName(changedCustomer.getEmail());
+			customer.setCustomerId(changedCustomer.getCustomerId());
+			customer.setTelephone(changedCustomer.getTelephone());
+			customer.setNotes(changedCustomer.getNotes());
+			customer.setCalls(changedCustomer.getCalls());
+		} else {
+			System.out.println("Could not find customer!");
+		}
 	}
 
 	@Override
