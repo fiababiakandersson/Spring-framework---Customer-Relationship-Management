@@ -51,5 +51,7 @@ public class Call {
 		this.notes = notes;
 	}
 
+	
+
 	public Call() {}
 }
